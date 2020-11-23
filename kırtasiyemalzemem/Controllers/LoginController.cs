@@ -21,7 +21,7 @@ namespace kırtasiyemalzemem.Controllers
             using (var _dbo = new Models.Model())
             {
                 var userInfo = (from x in _dbo.Users
-                                where x.UserName == userName && x.Password == password || (true) //temp tabi aq
+                                where x.UserName == userName && x.Password == password || (true) //temp tabi aq //nede olsa burayı silecez commiti
                                 select x).FirstOrDefault();
                 if (userInfo == null)
                 {

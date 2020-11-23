@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - kırtasiyemalzemem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    <header class="header-style-1">
+        <div class="top-bar animate-dropdown">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="cnt-account">
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.bigpoint.com.tr/sepetim/"><i class="icon fa fa-shopping-cart"></i>Sepetim</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/siparisler/"><i class="icon fa fa-file-o"></i>Siparişlerim</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/Akilli-Asistan/" style="color:red;font-weight:bold;"><i class="icon fa fa-check"></i>Akıllı Asistan</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/cari-ekstre/"><i class="icon fa fa-file-text-o"></i>Faturalarım</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/finans/"><i class="icon fa fa-credit-card"></i>Ödemeler</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/excel-liste/"><i class="icon fa fa-file-excel-o"></i>Excel</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/fiyat-degisikligi/"><i class="icon fa fa-exchange"></i>Fiyat Değişikliği</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/bayi-xml/"><i class="icon fa fa-external-link-square"></i>Xml</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/alt-bayiler.php"><i class="icon fa fa-users"></i>Alt Bayiler</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/duyurular.php"><i class="icon fa fa-bell"></i>Duyurular</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/hesabim/"><i class="icon fa fa-user"></i>Hesabım</a></li>
+                            <li><a href="https://www.bigpoint.com.tr/cikis/"><i class="icon fa fa-sign-out"></i>Çıkış</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                        <div class="logo">
+                            <a href="#" title="Bigpoint">
+
+                                <img src="https://www.bigpoint.com.tr/assets/images/logo.png" alt="">
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
+                        <div class="contact-row">
+                            <div class="phone inline">
+                                <i class="icon fa fa-phone"></i> 0(212) 551 00 92
+                            </div>
+                            <div class="contact inline">
+                                <i class="icon fa fa-envelope"></i> siparis@bigpoint.com.tr
+                            </div>
+                        </div>
+                        <div class="search-area">
+                            <form action="https://www.bigpoint.com.tr/kategori.php" name="form" id="form" method="get">
+                                <div class="control-group">
+
+                                    <input id="tv_search_head" name="sorgu" class="search-field" autocomplete="off" placeholder="Ürün Kodu, Ürün Adı veya Barkodu">
+
+                                    <a class="search-button" href="#" onclick="$(this).closest('form').submit()"></a>
+
+                                </div>
+                                <div class="suggs" id="search_suggestions"></div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
+                        <div class="dropdown dropdown-cart">
+
+                            <div class="dropdown dropdown-cart">
+                                <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+                                    <div class="items-cart-inner">
+                                        <div class="total-price-basket">
+                                            <span class="lbl">SEPET</span>
+                                            <span class="total-price">
+                                                <span class="value">0</span>
+                                                <span class="sign">TL</span>
+                                            </span>
+                                        </div>
+                                        <div class="basket">
+                                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                                        </div>
+                                        <div class="basket-item-count"><span class="count">0</span></div>
+
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+
+
+
+
+                                        <div class="clearfix cart-total">
+                                            <div class="text-center"><span class="price">Sepetinizde ürün bulunmamaktadır.</span></div>
+                                        </div><!-- /.cart-total-->
+
+
+                                    </li>
+                                </ul><!-- /.dropdown-menu-->
+                            </div><!-- /.dropdown-cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-nav animate-dropdown">
+            <div class="container">
+                <div class="yamm navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <span class="mobilecategory">Kategoriler</span>
+                        <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="nav-bg-class">
+                        <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+                            <div class="nav-outer">
+                                <ul class="nav navbar-nav" style="display:-webkit-inline-box">
+                                    <li class="yamm-fw">
+                                        <a href="https://www.bigpoint.com.tr" class="ozelspa" title="Bigpoint"><i class="fa fa-home fa-2x"></i></a>
+                                    </li>
+
+
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Kalem Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-3 col-md-3">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/afis-muhafaza-kaplari/" title="Roller Kalemler">Roller Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/ambalaj-lastikleri/" title="Versatil Kalemler">Versatil Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/ataslar/" title="Tükenmez Kalemler">Tükenmez Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/bant-kesme-makinalari/" title="Spiralli Kalemler">Spiralli Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/bantlar/" title="Jel Kalemleri">Jel Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/bantlar/" title="Uçlu Kalemler">Uçlu Kalemleri</a></li>
+
+
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-3 col-md-3">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/cetveller/" title="Asetat Kalemleri">Asetat Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/cop-kovalari/" title="Beyaz Tahta Kalemleri">Beyaz Tahta Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/delgecler/" title="CD Kalemleri">CD Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/evrak-raflari/" title="Çizim Kalemleri">Çizim Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Dereceli Kalemler">Dereceli Kalemler</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-3 col-md-3">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Fosforlu Kalemler">Fosforlu Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Gliss Kalemler">Gliss Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="İmza Kalemleri">İmza Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Kurşun Kalemler">Kurşun Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Kaligrafi Kalemleri">Kaligrafi Kalemleri</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-md-3">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Keçeli Kalemler">Keçeli Kalemler</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Kopya Kalemleri">Kopya Kalemleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Kalemtıraşlar ">Kalemtıraşlar</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/hesap-makinalari/" title="Kalem Uçları ">Kalem Uçları</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Ambalajlama Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/asetat-kalemleri/" title="Ambalaj Lastiği">Ambalaj Lastiği</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/board-markorler/" title="Koli Bandı">Koli Bandı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/fineliner-kalemler/" title="Selofon Bant">Selofon Bant</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/fosforlu-kalemler/" title="Masekeleme Bandı">Maskeleme Bandı</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kalemtraslar/" title="Koli Bant Makinesi">Koli Bant Makinesi</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/keceli-kalemler/" title="Selofon Bant Makinesi">Selofon Bant Makinesi</a></li>
+                                                                <li class="dropdown-submenu">
+                                                                    <a href="#" class="test dropdown-toggle">Yaka Kartı ve Aksesuarları</a>
+                                                                    <ul class="dropdown-menu pages">
+                                                                        <li>
+                                                                            <div class="yamm-content">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                                                                        <ul class="links">
+                                                                                            <li><a href="https://www.bigpoint.com.tr/kalemtraslar/" title="Yaka Kartı Poşeti">Yaka Kartı Poşeti</a></li>
+                                                                                            <li><a href="https://www.bigpoint.com.tr/kalemtraslar/" title="Yaka Kartı Plastik Kabı">Yaka Kartı Plastik Kabı</a></li>
+                                                                                            <li><a href="https://www.bigpoint.com.tr/kalemtraslar/" title="Yaka Kartı Askı İpi">Yaka Kartı Askı İpi</a></li>
+                                                                                            <li><a href="https://www.bigpoint.com.tr/kalemtraslar/" title="Yaka Kartı Yoyo">Yaka Kartı Yoyo</a></li>
+
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                    </ul>
+                                                            </ul>
+
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Ciltleme Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/boya-kalemleri/" title="Cilt Kapakları">Cilt Kapakları</a></li>
+
+
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/boya-setleri/" title="Laminasyon Filmleri">Laminasyon Filmleri</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/boyama-onlukleri/" title="Laminasyon Makineleri">Laminasyon Makineleri</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Dosyalama Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/buro-dosyalari/" title="Karton Dosyalar">Karton Dosyalar</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/cirtli-dosyalar/" title="Proje Kutuları">Proje Kutuları</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/citcitli-dosyalar/" title="Çıtçıtlı Dosyalar">Çıtçıtlı Dosyalar</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/d-mekanizmali-klasorler/" title="Körüklü Dosya">Körüklü Dosya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/d-mekanizmali-klasorler/" title="Sıkıştırmalı Dosya">Sıkıştırmalı Dosya</a></li>
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kademeli-dosyalar/" title="Sekreterlik">Sekreterlik</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kalemlikler/" title="Sıkıştırmalı Dosya">Sıkıştırmalı Dosya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kartvizit-albumleri/" title="Telli Dosya">Telli Dosya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/klasorler/" title="Büro Klasörleri">Büro Klasörleri</a></li>
+
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/dokuman-dosyalari/" title="Magazinlik">Magazinlik </a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/dosya-ayraci/" title="Poşet Dosya">Poşet Dosya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/halkali-klasorler/" title="Sunum Dosyası">Sunum Dosyası</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/koruklu-dosyalar/" title="Karton Klasör">Karton Klasör</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Kağıt Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/bloknotlar/" title="Gramajlı Kağıtlar">Gramajlı Kağıtlar</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/etiket-ve-makinalari/" title="Fotokopi Kağıtları">Fotokopi Kağıtları</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/etiket-ve-makinalari/" title="Tekstil Kağıtları">Tekstil Kağıtları</a></li>
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/fon-kartonlari/" title="Faks Kağıdı">Faks Kağıdı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/gramajli-fotokopi-kagitlari/" title="Yazar Kasa Pos Ruloları">Yazar Kasa Pos Ruloları</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/flipchart-kagidi/" title="Renkli Fotokopi Kağıtları">Renkli Fotokopi Kağıtları</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/flipchart-kagidi/" title="Flipchart Kağıdı">Flipchart Kağıdı</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Zarf Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/akrilik-boyalar/" title="CD Zarfı">CD Zarfı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/cezanne-boyalar/" title="Davetiye Zarfı">Davetiye Zarfı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/fircalar/" title="Diplomat Zarf">Diplomat Zarf</a></li>
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/paletler/" title="Troba Zarf">Troba Zarf</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/guaj-boyalar/" title="Hava Kabarcıklı Zarf">Hava Kabarcıklı Zarf</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kopuklu-maket-kartonlari/" title="Kare Zarf">Kare Zarf</a></li>
+                                                            </ul>
+
+
+
+                                                        </div>
+                                                    </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Masaüstü Gereç Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/albumler/" title="Zımba ve Zımba Teli">Zımba ve Zımba Teli</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/biblolar/" title="Ataçlar ve Kıskaçlar">Ataçlar ve Kıskaçlar</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Raptiye">Raptiye</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Harita Çivisi">Harita Çivisi</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Perfore Kalemlik">Perfore Kalemlik</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Kesim Tablası">Kesim Tablası</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/fotograf-cerceveleri/" title="Delgeç">Delgeç</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/luks-masa-setleri/" title="İğne">İğne</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Maket Bıçağı">Maket Bıçağı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Maket Bıçağı Yedekleri">Maket Bıçağı Yedekleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Makas">Makas</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Kağıt Tutacağı">Kağıt Tutacağı</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Evrak Rafı">Evrak Rafı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Küp Notluk">Küp Notluk</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Masa Setleri">Masa Setleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Sümen Takımı">Sümen Takımı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Yapışkanlı Not Kağıdı">Yapışkanlı Not Kağıdı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/paket-susler/" title="Küp Blok">Küp Blok</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Boya Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Kuru Boya">Kuru Boya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Pastel Boya">Pastel Boya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Sulu Boya">Sulu Boya</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Parmak Boyası">Parmak Boyası</a></li>
+
+
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Guaj Boya">Guaj Boyası</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Akrilik Boya">Akrilik Boyası</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Yağlı Boya">Yağlı Boyası</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Mum Boya">Mum Boyası</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Cam Boyası">Cam Boyası</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Boyama Önlüğü">Boyama Önlüğü</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Yapıştırıcı Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Japon Yapıştırıcı">Japon Yapıştırıcı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Hamur Tipi Yapıştırıcılar">Hamur Tipi Yapıştırıcılar</a></li>
+
+
+
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Sıvı Yapıştırıcı">Sıvı Yapıştırıcı</a></li>
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Stick Yapıştırıcı">Stick Yapıştırıcı</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Defter Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Ajandalar">Ajandalar</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Fantezi Defter">Fantezi Defter</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Okul Defterleri">Okul Defterleri</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Renkli Defterler">Renkli Defterler</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Bloknotlar">Bloknotlar</a></li>
+
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">El İşi Malzemeleri Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Eva">Eva</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Şönil">Şönil</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Keçe">Keçe</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Oynar Göz">Oynar Göz</a></li>
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="El İşi Kağıdı">El İşi Kağıdı</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Fon Kartonu">Fon Kartonu</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Oyun Hamuru">Oyun Hamuru</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Kil">Kil</a></li>
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Ponpon">Ponpon</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Sim">Sim</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Pul">Pul</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Boncuk">Boncuk</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Silgi Grubu</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Silgi">Silgi</a></li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Tahta Kalemi Silgisi">Tahta Kalemi Silgisi</a></li>
+                                                            </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Teknoloji Ürünleri</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Piller">Piller</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Flash Bellekler">Flash Bellekler</a></li>
+                                                               
+                                                            
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                                  <ul class="links">
+                                                                      <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Hesap Makineleri">Hesap Makineleri</a></li>
+                                                                      <li><a href="https://www.bigpoint.com.tr/kaykay/" title="CD-DVD">CD-DVD</a></li>
+                                                                  </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown yamm-fw">
+                                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Ofis Sarf Malzemeleri</a>
+                                        <ul class="dropdown-menu pages">
+                                            <li>
+                                                <div class="yamm-content">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-md-4">
+                                                            <ul class="links">
+
+                                                 
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Karton Bardak">Karton Bardak</a></li>
+                                                                <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Tonerler">Tonerler</a></li>
+                                                           
+                                                               
+                                                              
+
+                                                            </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                                  <ul class="links">
+                                                                      <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Yazıcı Şeritleri">Yazıcı Şeritleri</a></li>
+                                                                      <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Toner Dolum Tozları">Toner Dolum Tozları</a></li>
+                                                                  </ul>
+                                                        </div><div class="col-xs-12 col-sm-4 col-md-4">
+                                                                  <ul class="links">
+                                                                      <li><a href="https://www.bigpoint.com.tr/kaykay/" title="Kartuşlar">Kartuşlar</a></li>
+                                                                  </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="yamm-fw">
+                                        <a href="https://www.bigpoint.com.tr/kampanyalar/" title="Bigpoint Kampanyalar">İskontoları<span class="menu-label hot-menu hidden-xs">Toplu Alım</span></a>
+                                    </li>
+
+
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - kırtasiyemalzemem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -23,10 +23,10 @@ namespace kırtasiyemalzemem.Controllers
         }
         public IActionResult Index()
         {
-            if (SessionExtensions.GetString(HttpContext.Session, "UserID") == null)
-            {
-                return View("~/Views/Login/Index.cshtml");
-            }
+            //if (SessionExtensions.GetString(HttpContext.Session, "UserID") == null)
+            //{
+            //    return View("~/Views/Login/Index.cshtml");
+            //}
             using (var _dbo = new Model())
             {
                 ViewBag.Categories = Json((from x in _dbo.Category

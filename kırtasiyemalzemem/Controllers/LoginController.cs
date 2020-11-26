@@ -16,13 +16,18 @@ namespace kırtasiyemalzemem.Controllers
             return View();
         }
 
-        public IActionResult TryLogin(string userName, string password)
+        [HttpPost]
+        public IActionResult Login(string userName, string password)
         {
             using (var _dbo = new Models.Model())
             {
                 var userInfo = (from x in _dbo.Users
                                 where x.UserName == userName && x.Password == password || (true) //temp tabi aq //nede olsa burayı silecez commiti
                                 select x).FirstOrDefault();
+
+
+
+
                 if (userInfo == null)
                 {
                     return View("~/Views/Error/404.cshtml");
@@ -34,25 +39,14 @@ namespace kırtasiyemalzemem.Controllers
                     return View("~/Views/Home/Index.cshtml");
                 }
             }
-            //string conStr = "";
-            //using (MySqlConnection _con = new MySqlConnection(conStr))
-            //{
-            //    _con.Open();
-            //    MySqlCommand _cmd = new MySqlCommand("select * from Users where UserName=@user and Password=@pass", _con);
-            //    _cmd.Parameters.AddWithValue("user", userName);
-            //    _cmd.Parameters.AddWithValue("pass", password);
-            //    var reader = _cmd.ExecuteReader();
-            //    if (reader.Read())
-            //    {
-            //        int uID = Convert.ToInt32(reader["UserID"]);
-            //        HttpContext.Session.SetString("UserID", uID.ToString());
-            //        return View("~/Views/Home/Index.cshtml");
-            //    }
-            //    else
-            //    {
-            //        return View("~/Views/Shared/Error.cshtml");
-            //    }
-            //}
+
+
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View("~/Views/Login/Index.cshtml");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace kırtasiyemalzemem.Models
 {
     public class Model : DbContext
     {
-        public Model() : base(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=TestDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        public Model() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BogaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
         }
 

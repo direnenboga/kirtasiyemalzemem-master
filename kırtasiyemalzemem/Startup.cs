@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using kırtasiyemalzemem.Data;
+using kırtasiyemalzemem.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace kırtasiyemalzemem
 {
@@ -23,9 +27,16 @@ namespace kırtasiyemalzemem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<UserContext>(options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BogaDb"));
             //services.AddScoped<IProductService, ProductManager>();
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<UserContext>().AddDefaultTokenProviders();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddControllersWithViews();
             services.AddSession();
+
+            services.AddDbContext<kırtasiyemalzememContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("kırtasiyemalzememContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +54,7 @@ namespace kırtasiyemalzemem
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

@@ -7,13 +7,13 @@ namespace kırtasiyemalzemem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class initialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011251850444_InitialCreate"; }
+            get { return "202011281416307_initialCreate"; }
         }
         
         string IMigrationMetadata.Source

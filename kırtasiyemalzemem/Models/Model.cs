@@ -1,36 +1,23 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace kırtasiyemalzemem.Models
 {
-    public class Model : DbContext
-    {
-        public Model() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BogaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
-        {
-        }
-
-        public DbSet<Order> Order { get; set; }
-        public DbSet<Product> Product { get; set; }
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Users> Users { get; set; }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-
-        }
-    }
+   
     public class Order
     {
         public Order()
         {
             this.OrderTime = DateTime.Now;
         }
+
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
         public int ProductId { get; set; }
@@ -40,8 +27,7 @@ namespace kırtasiyemalzemem.Models
     public class Category
     {
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       [Key]
         public int Id { get; set; }
         public string Name { get; set; }
 
@@ -49,7 +35,7 @@ namespace kırtasiyemalzemem.Models
     public class Product
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
         public double price { get; set; }
@@ -57,18 +43,68 @@ namespace kırtasiyemalzemem.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
     }
-    public class Users
+
+    [Table("AspNetUsers")]
+    public class User : IdentityUser
     {
-        public Users()
-        {
-            this.CreateTime = DateTime.Now;
-        }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public string Name { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public DateTime CreateTime { get; set; }
+        public string Surname { get; set; }
     }
+
+    public class RegisterModel
+    {
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Surname { get; set; }
+        [Required]
+        public string username { get; set; }
+        
+        public int identityNumber { get; set; }
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        public string email { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Compare("Password")]
+        [DataType(DataType.Password)]
+        [Required]
+        public string RePassword { get; set; }
+
+
+   
+
+    }
+
+    public class LoginModel
+    {
+     
+        [Required]
+        public string UserName { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+    }
+
+
+    //public class Users
+    //{
+    //    public Users()
+    //    {
+    //        this.CreateTime = DateTime.Now;
+    //    }
+    //    [Key]
+    //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    //    public int Id { get; set; }
+    //    public string Name { get; set; }
+    //    public string UserName { get; set; }
+    //    public string Password { get; set; }
+    //    public DateTime CreateTime { get; set; }
+    //}
+
+
+
 }
